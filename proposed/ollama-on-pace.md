@@ -1,5 +1,13 @@
 # Setting Up Ollama on PACE ICE Cluster
 
+## Document Metadata
+* **Author**: Alejandro Gomez
+* **Date Created**: 2025-04-21
+* **Last Updated**: 2025-04-21
+* **Applicable Clusters**: ICE, Hive
+
+## Overview
+
 This guide provides instructions for setting up Ollama on the Georgia Tech PACE ICE Cluster, based on our successful deployment process. Ollama allows you to run large language models locally on PACE's GPUs.
 
 ## Prerequisites
