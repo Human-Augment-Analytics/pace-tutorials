@@ -4,7 +4,7 @@
 * **Author**: Alejandro Gomez
 * **Date Created**: 2025-04-21
 * **Last Updated**: 2025-04-21
-* **Applicable Clusters**: ICE, Hive
+* **Applicable Clusters**: ICE
 
 ## Overview
 
