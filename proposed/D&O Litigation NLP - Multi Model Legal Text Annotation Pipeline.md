@@ -91,9 +91,9 @@ python plot_model_scores.py
 ### Troubleshooting
 #### Common Issue 1: Output file >2GB crashes Excel
 **Error Message:**
-```
+
 Nothing happens – it just freezes
-```
+`
 **Resolution:**
 1. Use df.sample(n=1000) to debug on a subset
 2. df.to_csv("final_combined_sample.csv", index=False,
@@ -117,7 +117,10 @@ Nothing happens – it just freezes
  - Optimal performance: 4-8 cores recommended
 - Quota Impact:
  - Can potentially time out
+ ```
+
 ### Directory Structure
+
 ```
 project/
 pace_dno_nlp/
@@ -128,7 +131,8 @@ pace_dno_nlp/
 ├── outputs/
 │ ├── final_combined_all_models.csv
 │ ├── saliency_scores.csv
-│ └```
+│ └
+```
 ### Additional Resources
 - Internal PACE Documentation:
  - https://docs.pace.gatech.edu/ice/
