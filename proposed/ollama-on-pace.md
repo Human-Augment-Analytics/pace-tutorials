@@ -1,4 +1,3 @@
-# Setting Up Ollama on PACE ICE Cluster
 
 ## Document Metadata
 * **Author**: Alejandro Gomez
@@ -112,8 +111,8 @@ You may need to free up space in your scratch directory. The most common issue i
 
 If you see errors about broken symlinks or messages like:
 ```
-Couldn't find '/home/hice1/agomez302/.ollama/id_ed25519'. Generating new private key.
-Error: could not create directory mkdir /home/hice1/agomez302/.ollama: file exists
+Couldn't find '/home/hice1/<username>/.ollama/id_ed25519'. Generating new private key.
+Error: could not create directory mkdir /home/hice1/<username>/.ollama: file exists
 ```
 
 Check if your symlink is pointing to the correct location:
@@ -124,7 +123,7 @@ ls -l ~/.ollama
 file ~/.ollama
 ```
 
-If it's broken or points to a non-existent location (e.g., `/scratch/.ollama_models` instead of `/home/hice1/agomez302/scratch/.ollama_models`), recreate it with the correct path:
+If it's broken or points to a non-existent location (e.g., `/scratch/.ollama_models` instead of `/home/hice1/<username>/scratch/.ollama_models`), recreate it with the correct path:
 
 ```bash
 # Remove the broken symlink
@@ -156,7 +155,7 @@ Be mindful of your quota limits (typically 300GB for scratch space).
 ## Hardware Information
 
 When running Ollama on the ICE cluster, you'll have access to powerful hardware, such as:
-- NVIDIA H200 GPUs (139.8 GiB VRAM each)
+- NVIDIA H100 GPUs
 - CUDA 12.5 drivers
 
 ## Additional Commands
@@ -180,9 +179,9 @@ ollama --help
 
 Sample Structure afterwards:
 ```bash
-[agomez302@atl1-1-03-014-30-0 scratch]$ pwd
-/home/hice1/agomez302/scratch
-[agomez302@atl1-1-03-014-30-0 scratch]$ tree
+[<username>@<node> scratch]$ pwd
+/home/hice1/<username>/scratch
+[<username>@<node> scratch]$ tree
 .
 ├── bin
 │   └── ollama
@@ -213,17 +212,17 @@ Sample Structure afterwards:
 └── ollama-linux-amd64.tgz
 
 5 directories, 22 files
-[agomez302@atl1-1-03-014-30-0 scratch]$ ls -la
+[<username>@<node> scratch]$ ls -la
 total 1678836
-drwx------.   5 agomez302 gtperson      12288 Mar 27 01:18 .
+drwx------.   5 <username> gtperson      12288 Mar 27 01:18 .
 drwxr-xr-x. 310 root      root          20480 Mar 11 12:53 ..
-drwxr-xr-x.   2 agomez302 gtperson       4096 Mar 27 00:20 bin
-drwxr-xr-x.   3 agomez302 gtperson       4096 Mar 27 00:20 lib
--rw-r--r--.   1 agomez302 gtperson 1719074860 Mar 26 23:58 ollama-linux-amd64.tgz
-drwxr-xr-x.   3 agomez302 gtperson       4096 Mar 27 01:41 .ollama_models
-[agomez302@atl1-1-03-014-30-0 scratch]$ ls .ollama_models/
+drwxr-xr-x.   2 <username> gtperson       4096 Mar 27 00:20 bin
+drwxr-xr-x.   3 <username> gtperson       4096 Mar 27 00:20 lib
+-rw-r--r--.   1 <username> gtperson 1719074860 Mar 26 23:58 ollama-linux-amd64.tgz
+drwxr-xr-x.   3 <username> gtperson       4096 Mar 27 01:41 .ollama_models
+[<username>@<node> scratch]$ ls .ollama_models/
 history  id_ed25519  id_ed25519.pub  models
-[agomez302@atl1-1-03-014-30-0 scratch]$ ls .ollama_models/models/
+[<username>@<node> scratch]$ ls .ollama_models/models/
 blobs  manifests
-[agomez302@atl1-1-03-014-30-0 scratch]$ 
+[<username>@<node> scratch]$ 
 ```
