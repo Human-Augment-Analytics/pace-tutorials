@@ -171,6 +171,65 @@ ollama -v
 ollama --help
 ```
 
+## Troubleshooting: Port Unavailable When Running `ollama serve`
+
+If you encounter the following error:
+
+```bash
+$ ollama serve
+Error: listen tcp 127.0.0.1:11434: bind: address already in use
+```
+
+This means the default port `11434` is already in use by another process.
+
+### Solution: Run Ollama on a Different Port
+
+1. **Find an Available Port**
+
+Use a simple Python script to find an available port:
+
+```python
+# script.py
+#This function looks for the first free port and prints its number
+import socket
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind(('', 0))  # Bind to the first free port detected
+    port = s.getsockname()[1]
+    print(f"Available port: {port}")
+```
+
+Run the script:
+
+```bash
+$ python script.py
+Available port: 36039
+```
+
+2. **Set the `OLLAMA_HOST` Environment Variable**
+
+Since `ollama serve` does not support a `--port` flag, set the desired port using the `OLLAMA_HOST` environment variable:
+
+```bash
+$ OLLAMA_HOST=127.0.0.1:36039 ollama serve
+```
+
+You should see confirmation like:
+
+```
+time=... level=INFO msg="Listening on 127.0.0.1:36039 (version 0.7.0)"
+```
+
+This indicates that `ollama` is now successfully running on the new port.
+
+---
+
+### Considerations
+- Always ensure that the selected port is open and not blocked by firewalls or other restrictions.
+- To avoid port conflicts, prefer ports above 1024 and below 65535.
+
+
+
 ## Notes
 
 - The current Ollama version is 0.6.0 as of March 2025
