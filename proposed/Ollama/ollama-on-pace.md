@@ -4,6 +4,7 @@
 * **Date Created**: 2025-04-21
 * **Applicable Clusters**: ICE
 
+
 ## Overview
 
 This guide provides instructions for setting up Ollama on the Georgia Tech PACE ICE Cluster, based on our successful deployment process. Ollama allows you to run large language models locally on PACE's GPUs.
@@ -277,3 +278,5 @@ history  id_ed25519  id_ed25519.pub  models
 blobs  manifests
 [<username>@<node> scratch]$ 
 ```
+
+Created by researchers from the Human-Augmented Analytics Group (HAAG).
