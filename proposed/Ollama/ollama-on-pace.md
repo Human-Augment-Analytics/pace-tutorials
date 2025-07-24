@@ -2,8 +2,8 @@
 ## Document Metadata
 * **Author**: Alejandro Gomez, Karol Gutierrez, Agustin Lucas
 * **Date Created**: 2025-04-21
-* **Last Updated**: 2025-04-21
 * **Applicable Clusters**: ICE
+
 
 ## Overview
 
@@ -278,3 +278,5 @@ history  id_ed25519  id_ed25519.pub  models
 blobs  manifests
 [<username>@<node> scratch]$ 
 ```
+
+Created by researchers from the Human-Augmented Analytics Group (HAAG).
