@@ -11,4 +11,4 @@ Here, we store our tutorials on using different tools and resources on PACE, bef
 
 Below is a flow diagram depicting our (updated) procedure for submitting, reviewing, and proposing documentation for PACE's community notes.
 
-![The PACE documentation proposal pipeline, in flow diagram format.](./assets/HAAG_PACE_docs_proposal_pipeline_v2_dark.png)
+![The PACE documentation proposal pipeline, in flow diagram format.](./assets/HAAG_PACE_docs_proposal_pipeline_v3_dark.png)
