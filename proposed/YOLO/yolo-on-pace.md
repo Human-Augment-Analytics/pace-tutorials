@@ -8,6 +8,8 @@
 ## YOLO Model Setup
 
 ### Overview
+This document has been created by researchers in the [Human-Augmented Analytics Group (HAAG)](https://sites.gatech.edu/human-augmented-analytics-group/) for the benefit of the wider PACE community.
+
 This documentation describes the setup and usage of a YOLOv8-based object detection pipeline used to identify lizard toepads from scanned images. YOLO (You Only Look Once) is a real-time object detection system that is fast, accurate, and well-suited for high-throughput morphometric tasks. This tool is highly relevant to PACE users working in biology, image processing, and machine learning, particularly for research teams digitizing morphological traits at scale. This guide assumes that you have already created a labeled dataset.
 
 

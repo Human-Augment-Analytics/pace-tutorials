@@ -9,6 +9,9 @@
 ## [Title of Tool/Service/Process]
 
 ### Overview
+
+This document has been created by researchers in the [Human-Augmented Analytics Group (HAAG)](https://sites.gatech.edu/human-augmented-analytics-group/) for the benefit of the wider PACE community.
+
 [Provide 1-2 paragraphs explaining:
 - What this tool/service is
 - Its primary use cases
