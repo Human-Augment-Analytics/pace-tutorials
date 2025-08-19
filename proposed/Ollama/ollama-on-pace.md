@@ -161,24 +161,38 @@ This means the default port `11434` is already in use by another process.
 Use a simple Python script to find an available port:
 
 ```python
-# script.py
-#This function looks for the first free port and prints its number
+# port.py
+# Author: Dima al Nabhani
+
 import socket
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind(('', 0))  # Bind to the first free port detected
-    port = s.getsockname()[1]
-    print(f"Available port: {port}")
+# Scan ports 49152 to 65536 (ephemeral ports)
+def find_first_available_port(start=49152, end=65535):
+    for port in range(start, end + 1):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(0.1)
+            
+            if s.connect_ex(('127.0.0.1', port)) != 0:
+                return port
+            
+    # No available port found
+    return None 
+
+port = find_first_available_port()
+if port:
+    print(f"First available ephemeral port: {port}")
+else:
+    print("No available ports found in the ephemeral port range.")
 ```
 
-Run the ``script (a copy is in this GitHub repo):
+Download the `port.py` script (above) using `curl -L -o port.py https://raw.githubusercontent.com/Human-Augment-Analytics/pace-tutorials/refs/heads/main/proposed/Ollama/port.py`. Then, run it:
 
 ```bash
 $ python port.py
 Available port: 36039
 ```
 
-2. **Set the `OLLAMA_HOST` Environment Variable**
+1. **Set the `OLLAMA_HOST` Environment Variable**
 
 Since `ollama serve` does not support a `--port` flag, set the desired port using the `OLLAMA_HOST` environment variable:
 
